@@ -44,6 +44,7 @@ echo "Sample config file setup"
 # Remove the Dolly plugin from Wordpress
 rm -rf wp-content/plugins/hello.php
 
+#Generate secure table prefix
 PREFIX=`openssl rand -base64 8`
 PREFIX=${PREFIX}_
 echo "%s/\'wp_\'/\'$PREFIX\'/g
