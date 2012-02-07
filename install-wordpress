@@ -97,6 +97,7 @@ q
 
 #Get the Home Directory 
 echo "What is the Home URL? (WP_HOME)"
+echo "Be sure to include http://"
 read HOME
 echo "%s/home_domain/$HOME/g
 w
@@ -106,6 +107,7 @@ q
 
 #Get the Wordpress Directory 
 echo "Where is Wordpress Located? (WP_SITEURL)"
+echo "Be sure to include http://"
 read WORDPRESS
 echo "%s/wordpress_domain/$WORDPRESS/g
 w
