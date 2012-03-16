@@ -1,0 +1,14 @@
+/*
+ *Use this to define the cookie domain. be sure to put www. in front, so that only
+ *the one domain is used. 
+ *For more information, visit http://codex.wordpress.org/Editing_wp-config.php#Set_Cookie_Domain
+ */
+define('COOKIE_DOMAIN', 'cookie_domain');
+
+/**
+ * Home & site url: this will hard-code these options,
+ * disabling the ability to edit them from within WordPress
+ */
+define('WP_HOME', 'home_domain');
+define('WP_SITEURL', 'wordpress_domain');
+

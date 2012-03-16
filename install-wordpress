@@ -32,14 +32,25 @@ echo "Wordpress extracted"
 ##  This downloads the salt data to a file called salt.txt, removes lines 45-52 in the wp-config which contain the placeholder for the salt, and insert the contents of salt.txt into the config
 curl -o salt.txt https://api.wordpress.org/secret-key/1.1/salt/
 sed '45,52d'  wp-config-sample.php > wp-config-stripped.php
-sed '44 r salt.txt' wp-config-stripped.php > wp-config.php
+sed '44 r salt.txt' wp-config-stripped.php > wp-config-salt.php
+sed '82 r extras.txt' wp-config-salt.php > wp-config.php
 rm salt.txt
+rm extras.txt
 rm wp-config-sample.php
 rm wp-config-stripped.php
+rm wp-config-salt.php
 echo "Sample config file setup"
 
 # Remove the Dolly plugin from Wordpress
 rm -rf wp-content/plugins/hello.php
+
+#Generate secure table prefix
+PREFIX=`openssl rand -hex 8`
+PREFIX=${PREFIX}_
+echo "%s/\'wp_\'/\'$PREFIX\'/g
+w
+q
+" | ex wp-config.php
 
 #Get the Database Name
 echo "What is the database name?"
@@ -70,6 +81,35 @@ q
 echo "Where is the database located? (for default, type localhost)"
 read LOCATION
 echo "%s/localhost/$LOCATION/g
+w
+q
+" | ex wp-config.php
+
+#Get the Cookie Domain
+echo "What is the Cookie Domain?"
+echo "Be sure to precede it with www. . No http://"
+read COOKIE
+echo "%s/cookie_domain/$COOKIE/g
+w
+q
+" | ex wp-config.php
+
+
+#Get the Home Directory 
+echo "What is the Home URL? (WP_HOME)"
+echo "Be sure to include http://"
+read HOME
+echo "%s/home_domain/$HOME/g
+w
+q
+" | ex wp-config.php
+
+
+#Get the Wordpress Directory 
+echo "Where is Wordpress Located? (WP_SITEURL)"
+echo "Be sure to include http://"
+read WORDPRESS
+echo "%s/wordpress_domain/$WORDPRESS/g
 w
 q
 " | ex wp-config.php
