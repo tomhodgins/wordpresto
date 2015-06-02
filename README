@@ -1,8 +1,13 @@
-Welcome to the Wordpress Installer Script
+# Wordpresto
+### The Command-Line WordPress Installer
 
-This file was originally created for use on MediaTemple servers, and I'm certainly no programming expert here. There may well be ways to make this script much more useful to others on a wider variety of platforms than just MediaTemple's CentOS install.
+This script guides you through the downloading and installation of a new WordPress install from the shell. Simply prepare a database and `cd` into the directory where you want to install WordPress and run:
 
-You're welcome to add more to the file and fork it for your own use!
+```
+$ ./install-wordpress
+```
 
-Enjoy,
-tomhodgins@gmail.com
+To begin downloading and installing WordPress.
+
+I hope you enjoy this little tool and find it useful,
+Tommy (tomhodgins@gmail.com)
