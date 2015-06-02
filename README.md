@@ -7,7 +7,7 @@ This script guides you through the downloading and installation of a new WordPre
 $ ./install-wordpress
 ```
 
-To begin downloading and installing WordPress.
+…to begin downloading and installing WordPress.
 
 I hope you enjoy this little tool and find it useful,
 Tommy (tomhodgins@gmail.com)
