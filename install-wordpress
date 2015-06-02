@@ -17,7 +17,7 @@ echo "Welcome to the Wonderful Wordpress Installer!"
 # Download the latest Wordpress package
 ##  using curl with the -O argument downloads the file with the same name as it has on the server, if your host doesn't like that try using 'curl -o latest.zip htttp://wordpress.org/latest.zip' instead and save the stream to a file called 'latest.zip'
 echo "Fetching Wordpress"
-curl -O http://wordpress.org/latest.zip
+curl -O https://wordpress.org/latest.zip
 
 # Quietly unzip Wordpress and move all files into current directory
 ##  remove the '-q' from the unzip command to see the individual files extract.
